@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <link rel="icon" type="image/jpg" href="assets/images/Beer_Favicon-128x128.png">
+    <!-- link to google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Mako|Slackey" rel="stylesheet">
+
     <!-- Link to reset CSS stylesheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- link to bootstrap library -->
@@ -33,16 +36,16 @@
         <div class="container">
 
             <div class="row">
-                <div id="gameComplete">
-                    <div class="col-md-12">
+                <div>
+                    <div class="col-md-12" id="gameComplete">
                         <p id="totals">Game Over! - Here's how you did:</p>
                         <p id="totals2">Correct Answers:&nbsp;
                             <scan id="correct">0</scan>
                         </p>
                         <p id="totals3">Incorrect Answers:&nbsp;
-                            <scan id="wrong">0</scan>
+                            <scan id="incorrect">0</scan>
                         </p>
-                        <p id="totals4">Unanswered Answers:&nbsp;
+                        <p id="totals4">Unanswered:&nbsp;
                             <scan id=unanswered>0</scan>
                         </p>
                     </div>
@@ -68,24 +71,25 @@
                             <!-- <fieldset> -->
                             <!-- <legend id="question">Question goes here? -->
                             <div>
-                                <input id="radioa" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="0"></input>
+                                <input id="radioa" type="radio" name="radioButton" class="btn btn-outline-primary" value="0"></input>
                                 <span id="option1">1</span>
+                                <!-- onclick="processRadioButton()" -->
 
                             </div>
                             <div>
-                                <input id="radiob" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="1"></input>
+                                <input id="radiob" type="radio" name="radioButton" class="btn btn-outline-primary" value="1"></input>
                                 <span id="option2">2</span>
                             </div>
                             <div>
-                                <input id="radioc" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="2"></input>
+                                <input id="radioc" type="radio" name="radioButton" class="btn btn-outline-primary" value="2"></input>
                                 <span id="option3">3</span>
                             </div>
                             <div>
-                                <input id="radiod" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="3"></input>
+                                <input id="radiod" type="radio" name="radioButton" class="btn btn-outline-primary" value="3"></input>
                                 <span id="option4">4</span>
                             </div>
                             <div>
-                                <input id="radioe" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="4"></input>
+                                <input id="radioe" type="radio" name="radioButton" class="btn btn-outline-primary" value="4"></input>
                                 <span id="option5">5</span>
                             </div>
                         </form>
@@ -98,7 +102,7 @@
                 <div class="col-md-12">
                     <div class="answerWrapper">
                         <p id="correctAnswer">Correct Answer goes here</p>
-                        <img id="beerImg" src="assets/images/beer-793x526.jpg" height="200" alt="beer image">
+                        <img id="beerImg" src="assets/images/beer-793x526.jpg" height="250" alt="beer image">
                     </div>
                 </div>
             </div>

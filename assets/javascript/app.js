@@ -28,7 +28,7 @@
                 ["Montana", "incorrect"],
                 ["Nevada", "incorrect"]
             ],
-            "beerImage": "assets/images/220px-Dutch_beers.jpg"
+            "beerImage": "assets/images/2015Simpsons_DuffBeerForMe_060515.jpg"
         },
 
         {
@@ -52,7 +52,7 @@
                 ["water and orange juice", "incorrect"],
                 ["coca cola and pepsi cola", "incorrect"]
             ],
-            "beerImage": "assets/images/craft-beer.jpg"
+            "beerImage": "assets/images/drinkpreneur_2016-01-26-1453821995-8643361-beermain.jpg"
         },
 
 
@@ -65,23 +65,23 @@
                 ["700 years ago", "incorrect"],
                 ["375 years ago", "incorrect"]
             ],
-            "beerImage": "assets/images/gettyimages-547626781.jpg"
+            "beerImage": "assets/images/egyptianBeer.gif"
         },
 
         {
             "question": "What is the name of the ancient Sumerian Goddess of Brewing?",
             "answers": [
-                ["Alesi", "incorrect"],
+                ["Ostara", "incorrect"],
                 ["Leffe", "incorrect"],
-                ["Westmalle", "incorrect"],
-                ["Krombacher", "incorrect"],
+                ["Ashnan", "incorrect"],
+                ["Inanna", "incorrect"],
                 ["Ninkasi", "correct"]
             ],
-            "beerImage": "assets/images/drinkpreneur_2016-01-26-1453821995-8643361-beermain.jpg"
+            "beerImage": "assets/images/ninkasi.jpg"
         },
 
         {
-            "question": "In what year did German brewers come up with the Beer Purity Law, or the Reinheitsgebot?",
+            "question": "In what year did German brewers come up with the Beer Purity Law, called 'the Reinheitsgebot'?",
             "answers": [
                 ["582", "incorrect"],
                 ["1516", "correct"],
@@ -101,7 +101,7 @@
                 ["water, yeast, barley", "incorrect"],
                 ["water, yeast, hops", "incorrect"]
             ],
-            "beerImage": "assets/images/oktoberfest-34.jpg"
+            "beerImage": "assets/images/craft-beer.jpg"
         },
 
         {
@@ -117,23 +117,35 @@
         },
 
         {
-            "question": "What is the ideal temperature in which to enjoy an ale??",
+            "question": "What is the difference between a lager and an ale?",
             "answers": [
-                ["Just above freezing", "incorrect"],
-                ["Cellar temperature", "correct"],
-                ["Room temperature", "incorrect"],
-                ["Just below boiling", "incorrect"],
-                ["37 degrees celsius", "incorrect"]
+                ["lager originated in Germany and ale originated in France", "incorrect"],
+                ["lager is best served at room temperature and ale is best served at cellar temperature", "incorrect"],
+                ["lager was invented to be part of a religious ceremony, and ale originated in medieval inns", "incorrect"],
+                ["a lager is top fermented and an ale is bottom fermented", "correct"],
+                ["a lager is dark and creamy and an ale is light and airy", "incorrect"]
             ],
-            "beerImage": "assets/images/2015Simpsons_DuffBeerForMe_060515.jpg"
+            "beerImage": "assets/images/gettyimages-547626781.jpg"
         }
+
+        // {
+        //     "question": "What is the ideal temperature in which to enjoy an ale??",
+        //     "answers": [
+        //         ["Just above freezing", "incorrect"],
+        //         ["Cellar temperature", "correct"],
+        //         ["Room temperature", "incorrect"],
+        //         ["Just below boiling", "incorrect"],
+        //         ["37 degrees celsius", "incorrect"]
+        //     ],
+        //     "beerImage": "assets/images/2015Simpsons_DuffBeerForMe_060515.jpg"
+        // }
 
     ]
 }
 
 gameTracker = {
     "correctCntr": 0,
-    "wrongCntr": 0,
+    "incorrectCntr": 0,
     "unansweredCntr": 0,
     "triviaIndex": 0,
     "secondsLeft": 30
@@ -143,12 +155,14 @@ gameTracker = {
 //-------------------//
 // global variables
 //-------------------//
-const totalNumberOfQuestions = 3;
+const totalNumberOfQuestions = 10;
 var theInterval = 0;
 var isNewGame = true;
 var buttonChoice = "";
 var answerIndex = 0;
-var correctAnswer = '';
+var correctAnswer = "";
+var timer30Seconds = 0;
+var timer3Seconds = 0;
 
 
 //-------------//
@@ -158,15 +172,19 @@ var correctAnswer = '';
 
 
 function countDown() {
-    gameTracker.secondsLeft--;
     document.getElementById("secondsLeft").innerHTML = gameTracker.secondsLeft;
     // console.log("time left: " + gameTracker.secondsLeft);
+    if (gameTracker.secondsLeft === 0) {
+        stopCountDown();
+        countDownIsZero();
+    } else {
+        gameTracker.secondsLeft--;
+    }
 }
 
-function timeComplete(theIntervalVar) {
-    console.log("time has run out");
-    clearInterval(theIntervalVar);
-    return theIntervalVar;
+function stopCountDown() {
+    console.log("clear theInterval");
+    clearInterval(theInterval);
 }
 
 
@@ -178,7 +196,7 @@ function resetGame() {
     $("#totals3").hide();
     $("#totals4").hide();
     $("#correct").hide();
-    $("#wrong").hide();
+    $("#incorrect").hide();
     $("#unanswered").hide();
     $("#question").hide();
     $("#radioButtons").hide();
@@ -187,7 +205,7 @@ function resetGame() {
     $("#beerImg").hide();
     $("#startButton").show();
     gameTracker.correctCntr = 0;
-    gameTracker.wrongCntr = 0;
+    gameTracker.incorrectCntr = 0;
     gameTracker.unansweredCntr = 0;
     gameTracker.triviaIndex = 0;
     gameTracker.secondsLeft = 30;
@@ -201,67 +219,89 @@ function resetGame() {
 // process the start button click
 function processStartButtonClick() {
     console.log("in the processStartButtonClick");
+    if (isNewGame) {
+        resetGame();
+    }
     $("#startButton").hide();
     $("#question").show();
     $("#radioButtons").show();
-    theInterval = setInterval(countDown, 1000);
+    gameTracker.secondsLeft = 30;
+    // theInterval = setInterval(countDown, 1000);
     gameTracker.triviaIndex = 0;
     displayNextQuestion();
 }
 
 
 function processRadioButton() {
-    clearInterval(theInterval);
-    console.log("im in processRadioButton");
-    console.log("gameTracker: " + JSON.stringify(gameTracker));
-    console.log("is a correct " + trivia[gameTracker.triviaIndex].answers[answerIndex][1]);
-    buttonChoice = $("input[name='radioButton']:checked").val();
+    console.log("im in processRadioButton" + gameTracker.secondsLeft);
+    stopCountDown();
+    // clearTimeout(timer30Seconds);
 
+    console.log("time complete " + gameTracker.secondsLeft);
+    console.log("gameTracker: " + JSON.stringify(gameTracker));
+    buttonChoice = $("input[name='radioButton']:checked").val();
+    console.log("buttonChoice: " + buttonChoice);
+    console.log("about to enter the for loop");
     for (let i = 0; i < trivia[gameTracker.triviaIndex].answers.length; i++) {
+        console.log("im in the for loop i: " + i);
         if (trivia[gameTracker.triviaIndex].answers[i][1] === "correct") {
+            console.log("im in the correct answer if ");
             correctAnswer = trivia[gameTracker.triviaIndex].answers[i][0];
             if (i == parseInt(buttonChoice)) {
+                console.log("i = buttonChoice if ");
                 gameTracker.correctCntr++;
                 $("#correctAnswer").html("Correct!");
             } else {
-                gameTracker.wrongCntr++;
+                console.log("i != buttonChoice if ");
+                gameTracker.incorrectCntr++;
                 $("#correctAnswer").html("Wrong Answer!  The Correct Answer is: " + correctAnswer);
 
             }
+            console.log("outside the if buttonchoice if");
 
         }
+        console.log("outside the correct answer if ");
 
     }
+    console.log("outside the for loop");
 
     $("#beerImg").attr("src", trivia[gameTracker.triviaIndex].beerImage);
     // $("#beerImg").attr("width", "500");
     // $("#answerWrapper").show();
+    console.log("about to show the correct answer");
     $("#correctAnswer").show();
     $("#beerImg").show();
     $("#question").hide();
     $("#radioButtons").hide();
+    // setTimeout(waiting(), 10000);
+    console.log("just showed the correct answer ");
     $("input[name='radioButton']:checked").prop("checked", false);
-    gameTracker.triviaIndex++;
     console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    // gameTracker.secondsLeft = 30;
+
+    gameTracker.triviaIndex++;
+    console.log("about to display next question ");
 
     if (gameTracker.triviaIndex < totalNumberOfQuestions) {
         console.log("will reset the clock and display the next question");
-        theInterval = setInterval(countDown, 1000);
-        setTimeout(displayNextQuestion, 3000);
+        console.log("about to display teh enxt question");
+        timer3Seconds = setTimeout(displayNextQuestion, 3000);
+
     } else {
-        theInterval = timeComplete(theInterval);
-        console.log("display correctCntr and wrongCntr");
-        setTimeout(displayGameTotals(gameTracker), 3000);
+        console.log("not going to display the next question");
+        // theInterval = stopCountDown(theInterval);
+        console.log("display correctCntr and incorrectCntr");
+        timer3Seconds = setTimeout(displayGameTotals(), 3000);
         isNewGame = true;
     }
+
 }
 
 
 function displayGameTotals() {
     console.log("im in displayGameTotals");
+    stopCountDown();
     $("#correct").text(gameTracker.correctCntr);
-    $("#wrong").text(gameTracker.wrongCntr);
+    $("#incorrect").text(gameTracker.incorrectCntr);
     $("#unanswered").text(gameTracker.unansweredCntr);
     $("#startButton").text("Play Again?");
     $("#correctAnswer").hide();
@@ -272,7 +312,7 @@ function displayGameTotals() {
     $("#totals3").show();
     $("#totals4").show();
     $("#correct").show();
-    $("#wrong").show();
+    $("#incorrect").show();
     $("#unanswered").show();
     $("#startButton").show();
     isNewGame = true;
@@ -280,6 +320,7 @@ function displayGameTotals() {
 
 function displayNextQuestion() {
     console.log("im in displayNextQuestion");
+    gameTracker.secondsLeft = 30;
     $("#question").text(trivia[gameTracker.triviaIndex].question);
     $("#option1").text(trivia[gameTracker.triviaIndex].answers[0][0]);
     $("#option2").text(trivia[gameTracker.triviaIndex].answers[1][0]);
@@ -291,7 +332,65 @@ function displayNextQuestion() {
     $("#beerImg").hide();
     $("#question").show();
     $("#radioButtons").show();
+    theInterval = setInterval(countDown, 1000);
+    // timer30Seconds = setTimeout(countDownIsZero(), 30000);
 }
+
+
+function countDownIsZero() {
+    // clearTimeout(timer30Seconds);
+    console.log("im in countDownIsZero" + gameTracker.secondsLeft);
+    stopCountDown();
+    console.log("time complete " + gameTracker.secondsLeft);
+    console.log("gameTracker: " + JSON.stringify(gameTracker));
+    // buttonChoice = $("input[name='radioButton']:checked").val();
+    // console.log("buttonChoice: " + buttonChoice);
+    console.log("about to enter the for loop");
+    for (let i = 0; i < trivia[gameTracker.triviaIndex].answers.length; i++) {
+        console.log("im in the for loop i: " + i);
+        if (trivia[gameTracker.triviaIndex].answers[i][1] === "correct") {
+            console.log("im in the correct answer if ");
+            correctAnswer = trivia[gameTracker.triviaIndex].answers[i][0];
+        }
+        console.log("outside the correct answer if ");
+    }
+    console.log("outside the for loop");
+    gameTracker.unansweredCntr++;
+    $("#correctAnswer").html("Too Slow!  The Correct Answer is: " + correctAnswer);
+    $("#beerImg").attr("src", trivia[gameTracker.triviaIndex].beerImage);
+    // $("#beerImg").attr("width", "500");
+    // $("#answerWrapper").show();
+    console.log("about to show the correct answer");
+    $("#correctAnswer").show();
+    $("#beerImg").show();
+    $("#question").hide();
+    $("#radioButtons").hide();
+    // setTimeout(waiting(), 10000);
+    console.log("just showed the correct answer ");
+    console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
+    gameTracker.triviaIndex++;
+    console.log("about to display next question ");
+
+    if (gameTracker.triviaIndex < totalNumberOfQuestions) {
+        console.log("will reset the clock and display the next question");
+        console.log("about to display teh enxt question");
+        timer3Seconds = setTimeout(displayNextQuestion, 3000);
+
+    } else {
+        console.log("not going to display the next question");
+        // theInterval = stopCountDown(theInterval);
+        console.log("display correctCntr and incorrectCntr");
+        timer3Seconds = setTimeout(displayGameTotals(gameTracker), 3000);
+        isNewGame = true;
+    }
+
+}
+
+
+// function waiting() {
+//     console.log("waiting");
+
+// }
 
 
 //----------------------//
@@ -307,13 +406,29 @@ $(document).ready(function () {
 
     $("#startButton").click(processStartButtonClick);
 
+    console.log("gameTracker.secondsLeft " + gameTracker.secondsLeft);
+    // if(gameTracker.secondsLeft == 0){
+    //     console.log("im in the if - gameTracker.secondsLeft " + gameTracker.secondsLeft);
+    //     countDownIsZero();
+    // }   
+
+    $("#radioa").click(processRadioButton);
+    $("#radiob").click(processRadioButton);
+    $("#radioc").click(processRadioButton);
+    $("#radiod").click(processRadioButton);
+    $("#radioe").click(processRadioButton);
+
+
+
+
+
     console.log("gameTracker.triviaIndex" + gameTracker.triviaIndex);
-    
+
 
 
     // if (gameTracker.triviaIndex >= totalNumberOfQuestions) {
-    //     theInterval = timeComplete(theInterval);
-    //     console.log("display correctCntr and wrongCntr");
+    //     theInterval = stopCountDown(theInterval);
+    //     console.log("display correctCntr and incorrectCntr");
     //     displayGameTotals(gameTracker);
     //     isNewGame = true;
     // }

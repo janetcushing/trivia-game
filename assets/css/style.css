@@ -2,6 +2,8 @@
 
 header{
 
+    font-family: 'Slackey', Arial, "Helvetica Neue", Helvetica, sans-serif;   
+margin-top:10px;
 }
 
 body{
@@ -10,21 +12,59 @@ body{
     background-size: cover ;
     z-index: 2;
     
+    
 }
 
-.white-box {
+.white-box {  
+    font-family: 'Mako', Arial, "Helvetica Neue", Helvetica, sans-serif;  
+    font-size:  20px; 
     background-color: white;
     color: black;
     font-weight: bold; 
+    text-align: center;
     border: 5px solid red;
-    margin: 50px 450px 50px 450px;
+    margin: 50px 250px 50px 250px;
 
 }
-/* .wrapper {
-    text-align: center;
-} */
 
-/* .startButton {
-    position: absolute;
-    top: 50%;
-} */
+#radioButtons{
+    text-align:left;
+}
+
+#beerImg{
+    border: 2px solid rgb(17, 4, 39);
+    margin: 15px;
+}
+#gameComplete{
+    text-align: center;
+}
+
+
+/* 
+/* MEDIA TAGS */
+
+@media screen and (max-width: 980px) {
+    .white-box { 
+        border: 5px solid red;
+        margin: 30px 200px 30px 200px;
+    
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .white-box { 
+        font-size:  18px; 
+        border: 3px solid red;
+        margin: 20px 100px 20px 100px;
+    
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .white-box { 
+        border: 3px solid red;
+        margin: 10px 50px 10px 50px;
+        font-size:  16px; 
+    
+    }
+}
