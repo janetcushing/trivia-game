@@ -5,94 +5,127 @@
 //-----------------//
 
 {
-    trivia = [{
-            "question": "What animal has 'bear' attatched to its name, but is  a marsupial and not a bear?",
-            "a": ["koala", "correct"],
-            "b": ["panda", "incorrect"],
-            "c": ["possum", "incorrect"],
-            "d": ["black bear", "incorrect"],
-            "e": ["none of the above", "incorrect"]
+    trivia = [
+
+        {
+            "question": "What was the dominant brewery in New Hampshire from its inception in 1859 to the start of Prohibition in 1917?",
+            "answers": [
+                ["Anheuser-Busch Brewery", "incorrect"],
+                ["Sam Adams Brewery", "incorrect"],
+                ["Frank Jones Brewery", "correct"],
+                ["Smuttynose Brewing", "incorrect"],
+                ["Redhook Ale Brewery", "incorrect"]
+            ],
+            "beerImage": "assets/images/FrankJonesBrewery.jpg"
         },
 
         {
-            "question": "Recent DNA analysus confirms that what breed of dog is one of the oldest and one of the least genetically divergent from the wolf?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "Which U.S. state consumes the most beer per person?",
+            "answers": [
+                ["New Hampshire", "incorrect"],
+                ["Massachusetts", "incorrect"],
+                ["North Dakota", "correct"],
+                ["Montana", "incorrect"],
+                ["Nevada", "incorrect"]
+            ],
+            "beerImage": "assets/images/220px-Dutch_beers.jpg"
         },
 
         {
-            "question": "Question three?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "What is the name of the worlds highest selling beer?",
+            "answers": [
+                ["Budweiser", "incorrect"],
+                ["Oettinger", "incorrect"],
+                ["Guiness", "incorrect"],
+                ["Snow", "correct"],
+                ["Verboden Vrucht", "incorrect"]
+            ],
+            "beerImage": "assets/images/snow.jpg"
         },
 
         {
-            "question": "Question four?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "Beer is the third most highly consumed beverage in the world.  What are the top two?",
+            "answers": [
+                ["coffee and tea", "incorrect"],
+                ["tea and water", "correct"],
+                ["water and coffee", "incorrect"],
+                ["water and orange juice", "incorrect"],
+                ["coca cola and pepsi cola", "incorrect"]
+            ],
+            "beerImage": "assets/images/craft-beer.jpg"
+        },
+
+
+        {
+            "question": "Beer was first brewed how long ago?",
+            "answers": [
+                ["10,000 years ago", "incorrect"],
+                ["6000 years ago", "correct"],
+                ["3000 years ago", "incorrect"],
+                ["700 years ago", "incorrect"],
+                ["375 years ago", "incorrect"]
+            ],
+            "beerImage": "assets/images/gettyimages-547626781.jpg"
         },
 
         {
-            "question": "Question five?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "What is the name of the ancient Sumerian Goddess of Brewing?",
+            "answers": [
+                ["Alesi", "incorrect"],
+                ["Leffe", "incorrect"],
+                ["Westmalle", "incorrect"],
+                ["Krombacher", "incorrect"],
+                ["Ninkasi", "correct"]
+            ],
+            "beerImage": "assets/images/drinkpreneur_2016-01-26-1453821995-8643361-beermain.jpg"
         },
 
         {
-            "question": "Question six?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "In what year did German brewers come up with the Beer Purity Law, or the Reinheitsgebot?",
+            "answers": [
+                ["582", "incorrect"],
+                ["1516", "correct"],
+                ["1866", "incorrect"],
+                ["1912", "incorrect"],
+                ["1937", "incorrect"]
+            ],
+            "beerImage": "assets/images/1607_belgianbeertour.jpg"
         },
 
         {
-            "question": "Question seven?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "Reinheitsgebot, or the 'German Beer Purity Law', states that only 3 ingredients can be used to brew beer.  What are they?",
+            "answers": [
+                ["water, yeast, hops", "incorrect"],
+                ["water, barley, hops", "correct"],
+                ["water, molasses, barley", "incorrect"],
+                ["water, yeast, barley", "incorrect"],
+                ["water, yeast, hops", "incorrect"]
+            ],
+            "beerImage": "assets/images/oktoberfest-34.jpg"
         },
 
         {
-            "question": "Question eight?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "What is the Vietnamese word for 'beer'?",
+            "answers": [
+                ["bia", "correct"],
+                ["rượu", "incorrect"],
+                ["nước", "incorrect"],
+                ["chanh", "incorrect"],
+                ["cốc-tai", "incorrect"]
+            ],
+            "beerImage": "assets/images/bière-vietnamienne.jpg"
         },
 
         {
-            "question": "Question nine?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
-        },
-
-        {
-            "question": "Question ten?",
-            "a": ["pekingese", "correct"],
-            "b": ["basenji", "incorrect"],
-            "c": ["german shephard", "incorrect"],
-            "d": ["alaskan malamute", "incorrect"],
-            "e": ["saluki", "incorrect"]
+            "question": "What is the ideal temperature in which to enjoy an ale??",
+            "answers": [
+                ["Just above freezing", "incorrect"],
+                ["Cellar temperature", "correct"],
+                ["Room temperature", "incorrect"],
+                ["Just below boiling", "incorrect"],
+                ["37 degrees celsius", "incorrect"]
+            ],
+            "beerImage": "assets/images/2015Simpsons_DuffBeerForMe_060515.jpg"
         }
 
     ]
@@ -114,7 +147,8 @@ const totalNumberOfQuestions = 3;
 var theInterval = 0;
 var isNewGame = true;
 var buttonChoice = "";
-var selectionMade = false;
+var answerIndex = 0;
+var correctAnswer = '';
 
 
 //-------------//
@@ -138,9 +172,20 @@ function timeComplete(theIntervalVar) {
 
 function resetGame() {
     console.log("im in the resetGame");
-    // $("#gameComplete").hide();
-    // $("#question").hide();
-    // $("#radioButtons").hide();
+    $("#gameComplete").hide();
+    $("#totals").hide();
+    $("#totals2").hide();
+    $("#totals3").hide();
+    $("#totals4").hide();
+    $("#correct").hide();
+    $("#wrong").hide();
+    $("#unanswered").hide();
+    $("#question").hide();
+    $("#radioButtons").hide();
+    // $("#answerWrapper").hide();
+    $("#correctAnswer").hide();
+    $("#beerImg").hide();
+    $("#startButton").show();
     gameTracker.correctCntr = 0;
     gameTracker.wrongCntr = 0;
     gameTracker.unansweredCntr = 0;
@@ -149,7 +194,6 @@ function resetGame() {
     theInterval = 0;
     radioButton = 0;
     isNewGame = false;
-    selectionMade = false;
     // processStartButtonClick();
 
 }
@@ -157,196 +201,98 @@ function resetGame() {
 // process the start button click
 function processStartButtonClick() {
     console.log("in the processStartButtonClick");
-
-    // $("#startButton").hide();
-    // $("#question").show();
-    // $("#radioButtons").show();
+    $("#startButton").hide();
+    $("#question").show();
+    $("#radioButtons").show();
     theInterval = setInterval(countDown, 1000);
     gameTracker.triviaIndex = 0;
-    selectionMade = true;
     displayNextQuestion();
 }
 
 
-
-// function processRadioButtonChoice() {
-//     console.log("im in processRadioButtonChoice ");
-//     // radioButton = document.forms[0];
-
-//     // console.log("radioButton length " + radioButton.length);
-//     // console.log("radioButton[0]  " + radioButton[0].checked);
-//     // var i = 0;
-//     // for (i = 0; i < radioButton.length; i++) {
-//     //     if (radioButton[i].checked) {
-//     //         console.log("radioButton checked: " + i);
-//     //         buttonChoice = radioButton[i].value;
-//     //         console.log("radioButton[i]: " + radioButton[i].value);
-//     //         console.log("buttonChoice: " + buttonChoice);
-//     //         selectionMade = true;
-//     //     }
-//     // }
-//     var selection = document.getElementById("radioa").checked;
-//     if(selection){
-//         console.log("radioA checked: " + buttonChoice);
-//         buttonChoice = "a";
-//     }
-//     // buttonChoice = $('input[type=radio][name=radioButton]:checked').value();
-//     // buttonChoice = $("input:radio[name=radioButton]:checked").val();
-//     console.log("buttonChoice " + buttonChoice);
-//     if (buttonChoice === "a") {
-//         console.log("radioA checked: " + buttonChoice);
-//         thegameTracker = (processRadioButtonA(gameTracker, trivia));
-//     } else if (buttonChoice === "b") {
-//         console.log("radiob checked: " + buttonChoice);
-//         thegameTracker = (processRadioButtonB(gameTracker, trivia));
-//     } else if (buttonChoice === "c") {
-//         console.log("radioc checked: " + buttonChoice);
-//         thegameTracker = (processRadioButtonC(gameTracker, trivia));
-//     } else if (buttonChoice === "d") {
-//         console.log("radiod checked: " + buttonChoice);
-//         thegameTracker = (processRadioButtonD(gameTracker, trivia));
-//     } else if (buttonChoice === "e") {
-//         console.log("radioe checked: " + buttonChoice);
-//         thegameTracker = (processRadioButtonE(gameTracker, trivia));
-//     } else {
-//         gameTracker.wrongCntr++;
-//     }
-//     console.log("Need to loop in the next question");
-
-
-// }
-
-function processRadioButtonA() {
-    console.log("im in processRadioButtonA");
+function processRadioButton() {
+    clearInterval(theInterval);
+    console.log("im in processRadioButton");
     console.log("gameTracker: " + JSON.stringify(gameTracker));
-    console.log("is a correct " + trivia[gameTracker.triviaIndex].a[gameTracker.triviaIndex][1]);
-    if (trivia[gameTracker.triviaIndex].a[gameTracker.triviaIndex][1] === "correct") {
-        gameTracker.correctCntr++;
-        $("#correctAnswer").html("Correct!");
-    } else {
-        gameTracker.wrongCntr++;
-        $("#correctAnswer").html("The Correct Answer was: " );
+    console.log("is a correct " + trivia[gameTracker.triviaIndex].answers[answerIndex][1]);
+    buttonChoice = $("input[name='radioButton']:checked").val();
+
+    for (let i = 0; i < trivia[gameTracker.triviaIndex].answers.length; i++) {
+        if (trivia[gameTracker.triviaIndex].answers[i][1] === "correct") {
+            correctAnswer = trivia[gameTracker.triviaIndex].answers[i][0];
+            if (i == parseInt(buttonChoice)) {
+                gameTracker.correctCntr++;
+                $("#correctAnswer").html("Correct!");
+            } else {
+                gameTracker.wrongCntr++;
+                $("#correctAnswer").html("Wrong Answer!  The Correct Answer is: " + correctAnswer);
+
+            }
+
+        }
+
     }
-    
+
+    $("#beerImg").attr("src", trivia[gameTracker.triviaIndex].beerImage);
+    // $("#beerImg").attr("width", "500");
+    // $("#answerWrapper").show();
+    $("#correctAnswer").show();
+    $("#beerImg").show();
+    $("#question").hide();
+    $("#radioButtons").hide();
+    $("input[name='radioButton']:checked").prop("checked", false);
     gameTracker.triviaIndex++;
     console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    gameTracker.secondsLeft = 30;
-    theInterval = setInterval(countDown, 1000);
+    // gameTracker.secondsLeft = 30;
 
-    $("radioa").prop( "checked", false );
-    setTimeout(displayNextQuestion, 5000);
-}
-
-function processRadioButtonB() {
-    if (trivia[gameTracker.triviaIndex].b[gameTracker.triviaIndex][1] == "correct") {
-        gameTracker.correctCntr++;
-        $("#correctAnswer").html("Correct!");
+    if (gameTracker.triviaIndex < totalNumberOfQuestions) {
+        console.log("will reset the clock and display the next question");
+        theInterval = setInterval(countDown, 1000);
+        setTimeout(displayNextQuestion, 3000);
     } else {
-        gameTracker.wrongCntr++;
-        $("#correctAnswer").html("The Correct Answer was: " );
+        theInterval = timeComplete(theInterval);
+        console.log("display correctCntr and wrongCntr");
+        setTimeout(displayGameTotals(gameTracker), 3000);
+        isNewGame = true;
     }
-    
-    gameTracker.triviaIndex++;
-    console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    gameTracker.secondsLeft = 30;
-    theInterval = setInterval(countDown, 1000);
-    $("radiob").prop( "checked", false );
-    setTimeout(displayNextQuestion, 5000);
 }
 
-function processRadioButtonC() {
-    if (trivia[gameTracker.triviaIndex].c[gameTracker.triviaIndex][1] == "correct") {
-        gameTracker.correctCntr++;
-        $("#correctAnswer").html("Correct!");
-    } else {
-        gameTracker.wrongCntr++;
-        $("#correctAnswer").html("The Correct Answer was: " );
-    }
-    
-    gameTracker.triviaIndex++;
-    $("#correctAnswer").html("Correct!");
-    console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    gameTracker.secondsLeft = 30;
-    theInterval = setInterval(countDown, 1000);
-    // $("radioc").off('click', );
-    $("radioc").prop( "checked", false );
-    setTimeout(displayNextQuestion, 5000);
-}
-
-function processRadioButtonD() {
-    if (trivia[gameTracker.triviaIndex].d[gameTracker.triviaIndex][1] == "correct") {
-        gameTracker.correctCntr++;
-        $("#correctAnswer").html("Correct!");
-    } else {
-        gameTracker.wrongCntr++;
-        $("#correctAnswer").html("The Correct Answer was: " );
-    }
-    
-    gameTracker.triviaIndex++;
-    console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    gameTracker.secondsLeft = 30;
-    theInterval = setInterval(countDown, 1000);
-    $("radioc").prop( "checked", false );
-    setTimeout(displayNextQuestion, 5000);
-}
-
-function processRadioButtonE() {
-    if (trivia[gameTracker.triviaIndex].e[gameTracker.triviaIndex][1] == "correct") {
-        gameTracker.correctCntr++;
-        $("#correctAnswer").html("Correct!");
-    } else {
-        gameTracker.wrongCntr++;
-        $("#correctAnswer").html("The Correct Answer was: " );
-    }
-    
-    gameTracker.triviaIndex++;
-    console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    gameTracker.secondsLeft = 30;
-    theInterval = setInterval(countDown, 1000);
-    $("radioc").prop( "checked", false );
-    setTimeout(displayNextQuestion, 5000);
-}
 
 function displayGameTotals() {
+    console.log("im in displayGameTotals");
     $("#correct").text(gameTracker.correctCntr);
     $("#wrong").text(gameTracker.wrongCntr);
     $("#unanswered").text(gameTracker.unansweredCntr);
     $("#startButton").text("Play Again?");
-    // $("#gameComplete").show();
-    // $("#startButton").show();
+    $("#correctAnswer").hide();
+    $("#beerImg").hide();
+    $("#gameComplete").show();
+    $("#totals").show();
+    $("#totals2").show();
+    $("#totals3").show();
+    $("#totals4").show();
+    $("#correct").show();
+    $("#wrong").show();
+    $("#unanswered").show();
+    $("#startButton").show();
+    isNewGame = true;
 }
 
 function displayNextQuestion() {
     console.log("im in displayNextQuestion");
     $("#question").text(trivia[gameTracker.triviaIndex].question);
-    $("#option1").text(trivia[gameTracker.triviaIndex].a[0]);
-    $("#option2").text(trivia[gameTracker.triviaIndex].b[0]);
-    $("#option3").text(trivia[gameTracker.triviaIndex].c[0]);
-    $("#option4").text(trivia[gameTracker.triviaIndex].d[0]);
-    $("#option5").text(trivia[gameTracker.triviaIndex].e[0]);
+    $("#option1").text(trivia[gameTracker.triviaIndex].answers[0][0]);
+    $("#option2").text(trivia[gameTracker.triviaIndex].answers[1][0]);
+    $("#option3").text(trivia[gameTracker.triviaIndex].answers[2][0]);
+    $("#option4").text(trivia[gameTracker.triviaIndex].answers[3][0]);
+    $("#option5").text(trivia[gameTracker.triviaIndex].answers[4][0]);
+    // $("#answerWrapper").show();
+    $("#correctAnswer").hide();
+    $("#beerImg").hide();
+    $("#question").show();
+    $("#radioButtons").show();
 }
 
-// function displayCorrectAnswer() {
-//     console.log("im in displayCorrectAnswer");
-//     if (trivia[gameTracker.triviaIndex].a[1] == "correct") {
-//         console.log("a is the correct answer");
-//         console.log(trivia[gameTracker.triviaIndex].a[0]);
-//         $("#correctAnswer").html("Correct!");
-//     } else if (trivia[gameTracker.triviaIndex].b[1] == "correct") {
-//         console.log("b is the correct answer");
-//         console.log(trivia[gameTracker.triviaIndex].b[0]);
-//     } else if (trivia[gameTracker.triviaIndex].c[1] == "correct") {
-//         console.log("c is the correct answer");
-//         console.log(trivia[gameTracker.triviaIndex].c[0]);
-//     } else if (trivia[gameTracker.triviaIndex].d[1] == "correct") {
-//         console.log("d is the correct answer");
-//         console.log(trivia[gameTracker.triviaIndex].d[0]);
-//     } else if (triviagameTracker.triviaIndex.e[1] == "correct") {
-//         console.log("e is the correct answer");
-//         console.log(trivia[gameTracker.triviaIndex].e[0]);
-
-//     }
-// }
 
 //----------------------//
 // main processing
@@ -362,26 +308,15 @@ $(document).ready(function () {
     $("#startButton").click(processStartButtonClick);
 
     console.log("gameTracker.triviaIndex" + gameTracker.triviaIndex);
-    // processRadioButtonChoice();
+    
 
-    // if (selectionMade || gameTracker.secondsLeft <= 0) { 
-    //     displayCorrectAnswer();
-    //     gameTracker.triviaIndex++;
-    //     console.log("gameTracker.triviaIndex " + gameTracker.triviaIndex);
-    //     gameTracker.secondsLeft = 30;
-    //     theInterval = setInterval(countDown, 1000);
-    //     displayNextQuestion();
+
+    // if (gameTracker.triviaIndex >= totalNumberOfQuestions) {
+    //     theInterval = timeComplete(theInterval);
+    //     console.log("display correctCntr and wrongCntr");
+    //     displayGameTotals(gameTracker);
+    //     isNewGame = true;
     // }
-
-
-
-
-    if (gameTracker.triviaIndex >= totalNumberOfQuestions) {
-        theInterval = timeComplete(theInterval);
-        console.log("display correctCntr and wrongCntr");
-        displayGameTotals(gameTracker);
-        isNewGame = true;
-    }
 
 
 });

@@ -18,118 +18,94 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <!-- <div class="row header"> -->
-            <div class="row heading">
-                <div class="col-md-12">
-                    <h1>TRIVIA GAME</h1>
+    <div class="white-box">
+        <header>
+            <div class="container">
+                <!-- <div class="row header"> -->
+                <div class="row heading">
+                    <div class="col-md-12">
+                        <h1>BEER FUN FACTS TRIVIA GAME</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="container">
-        <div class="row">
-            <div id="gameComplete">
-                <div class="col-md-12">
-                    <p id=totals>All Done - Here's How You Did:</p>
-                    <p>Correct Answers:&nbsp;
-                        <scan id="correct">0</scan>
-                    </p>
-                    <p>Incorrect Answers:&nbsp;
-                        <scan id="wrong">0</scan>
-                    </p>
-                    <p>Unanswered Answers:&nbsp;
-                        <scan id=unanswered>0</scan>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrapper">
-                    <button id="startButton" class="btn btn-outline-primary">START</button>
-                    <div id="timer">
-                        <p>TimeRemaining:&nbsp;
-                            <span id="secondsLeft">30</span>
+        <div class="container">
+
+            <div class="row">
+                <div id="gameComplete">
+                    <div class="col-md-12">
+                        <p id="totals">Game Over! - Here's how you did:</p>
+                        <p id="totals2">Correct Answers:&nbsp;
+                            <scan id="correct">0</scan>
+                        </p>
+                        <p id="totals3">Incorrect Answers:&nbsp;
+                            <scan id="wrong">0</scan>
+                        </p>
+                        <p id="totals4">Unanswered Answers:&nbsp;
+                            <scan id=unanswered>0</scan>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrapper">
-                    <p id="question">Question goes here?</p>
-                    <form id="radioButtons">
-                        <!-- <fieldset> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <button id="startButton" class="btn btn-outline-primary">START</button>
+                        <div id="timer">
+                            <p>TimeRemaining:&nbsp;
+                                <span id="secondsLeft">30</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <p id="question">Question goes here?</p>
+                        <form id="radioButtons">
+                            <!-- <fieldset> -->
                             <!-- <legend id="question">Question goes here? -->
                             <div>
-                                <input id="radioa" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonA()" value="a"></input>
+                                <input id="radioa" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="0"></input>
                                 <span id="option1">1</span>
 
                             </div>
                             <div>
-                                <input id="radiob" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonB()" value="b"></input>
+                                <input id="radiob" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="1"></input>
                                 <span id="option2">2</span>
                             </div>
                             <div>
-                                <input id="radioc" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonC()" value="c"></input>
+                                <input id="radioc" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="2"></input>
                                 <span id="option3">3</span>
                             </div>
                             <div>
-                                <input id="radiod" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonD()" value="d"></input>
+                                <input id="radiod" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="3"></input>
                                 <span id="option4">4</span>
                             </div>
                             <div>
-                                <input id="radioe" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonE()" value="e"></input>
+                                <input id="radioe" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButton()" value="4"></input>
                                 <span id="option5">5</span>
                             </div>
-                        <!-- </legend> -->
-                        <!-- </fieldset> -->
-                    </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="answerWrapper">
+                        <p id="correctAnswer">Correct Answer goes here</p>
+                        <img id="beerImg" src="assets/images/beer-793x526.jpg" height="200" alt="beer image">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrapper">
-                    <p id="correctAnswer">Correct Answer goes here</p>
-                    <form id="radioButtons">
-                        <!-- <fieldset> -->
-                            <!-- <legend id="question">Question goes here? -->
-                            <div>
-                                <input id="radioa" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonA()" value="a"></input>
-                                <span id="option1">1</span>
 
-                            </div>
-                            <div>
-                                <input id="radiob" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonB()" value="b"></input>
-                                <span id="option2">2</span>
-                            </div>
-                            <div>
-                                <input id="radioc" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonC()" value="c"></input>
-                                <span id="option3">3</span>
-                            </div>
-                            <div>
-                                <input id="radiod" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonD()" value="d"></input>
-                                <span id="option4">4</span>
-                            </div>
-                            <div>
-                                <input id="radioe" type="radio" name="radioButton" class="btn btn-outline-primary" onclick="processRadioButtonE()" value="e"></input>
-                                <span id="option5">5</span>
-                            </div>
-                        <!-- </legend> -->
-                        <!-- </fieldset> -->
-                    </form>
-                </div>
-            </div>
-        </div>
+
     </div>
-
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"

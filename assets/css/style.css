@@ -4,6 +4,22 @@ header{
 
 }
 
+body{
+    background-image: url("../images/Why-Beer-Is-Good-For-You.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
+    z-index: 2;
+    
+}
+
+.white-box {
+    background-color: white;
+    color: black;
+    font-weight: bold; 
+    border: 5px solid red;
+    margin: 50px 450px 50px 450px;
+
+}
 /* .wrapper {
     text-align: center;
 } */
