@@ -116,7 +116,7 @@
                 ["chanh", "incorrect"],
                 ["cốc-tai", "incorrect"]
             ],
-            "beerImage": "assets/images/biere-vietnamienne.jpg"
+            "beerImage": "assets/images/vietnameseBeer.jpg"
         },
 
         {
